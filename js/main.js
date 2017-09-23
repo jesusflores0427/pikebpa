@@ -2,12 +2,24 @@ $(document).ready(function() {
 	// Header Scroll
 	$(window).on('scroll', function() {
 		var scroll = $(window).scrollTop();
+		var header = document.getElementById('header');
+		$('#header').addClass('test');
 
-		if (scroll >= 50) {
-			$('#header').addClass('fixed');
-		} else {
+		if (scroll <= 1000) {
+			// console.log(scroll);
 			$('#header').removeClass('fixed');
-		}
+			$('#header').addClass('test');
+			header.style.position = "fixed";
+			header.style.bottom = scroll+'px';
+			console.log(header.style.bottom);
+		} else if (scroll > 1000){
+			$('#header').removeClass('test');
+			$('#header').addClass('fixed');
+		} 
+
+		// while (scroll < 500) {
+		// 	$('#header').style.position = scroll;
+		// }
 	});
 
 	// Fancybox
