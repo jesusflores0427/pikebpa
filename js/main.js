@@ -2,6 +2,10 @@ $(document).ready(function() {
 	// Header Scroll
 	$(window).on('scroll', function() {
 		var scroll = $(window).scrollTop();
+		console.log(scroll);
+
+
+// =========================the navbar=======================
 		var header = document.getElementById('header');
 		$('#header').addClass('test');
 
@@ -11,7 +15,7 @@ $(document).ready(function() {
 			$('#header').addClass('test');
 			header.style.position = "fixed";
 			header.style.bottom = scroll+'px';
-			console.log(header.style.bottom);
+			// console.log(header.style.bottom);
 		} else if (scroll > 1000){
 			$('#header').removeClass('test');
 			$('#header').addClass('fixed');
@@ -20,6 +24,15 @@ $(document).ready(function() {
 		// while (scroll < 500) {
 		// 	$('#header').style.position = scroll;
 		// }
+
+// ========================services=========================
+
+		var services = document.getElementById('services');
+		if (scroll >= 1550) {
+			$('services-banner').addClass('fixed');
+			console.log("hello");
+		}
+
 	});
 
 	// Fancybox
