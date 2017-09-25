@@ -77,6 +77,8 @@ body {
 	font-family: "Open Sans", Arial, sans-serif;
 	font-weight: 400;
 	color: #6c7279;
+	position: absolute;
+	top: 100vh;
 }
 ul, ol {
 	margin: 0;
@@ -107,7 +109,7 @@ ul li {
 	height: 80px;
 	background-color: #00aeda;
 	width: 100%;
-	z-index: 999;
+	z-index: 99;
 }
 
 #header a {
@@ -125,6 +127,7 @@ ul li {
 	max-width: 1170px;
 	padding: 60px 0;
 	width: 100%;
+	z-index: 999;
 /*	-moz-transition: padding 0.3s;
 	-o-transition: padding 0.3s;
 	-webkit-transition: padding 0.3s;
@@ -161,6 +164,7 @@ ul li {
 	color: #000;
 }
 #header.fixed {
+	z-index: 99;
 	position: fixed;
 	/*bottom: 0;*/
 	top: 0;
@@ -345,20 +349,39 @@ ul li {
 /* ------------------------------------------------------------------------------
 	Banner
 -------------------------------------------------------------------------------*/
-
-.banner {
+.banner-cont {
+	position: absolute;
+}
+.banner-stupidshit {
 	background-image: url(../images/banner.jpg);
 	background-position: center top;
 	background-repeat: no-repeat;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	-webkit-background-size: cover;
-	background-size: cover;
-	min-height: 100vh;
-	z-index: 1;
+	background-size: 100vw 100vh;
+	min-height: 0px;
+	min-width: 100vw !important;
+	z-index: -1;
+	position: fixed;
+}
+#banner {
+	background-image: url(../images/banner.jpg);
+	background-position:center top;
+	background-repeat: no-repeat;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-webkit-background-size: cover;
+	background-size:  100vw 100vh;
+	min-height: 0px;
+	min-width: 100vw;
+	z-index: -1;
+	position: fixed;
+	top: 0px;
 }
 .banner-text {
 	padding-top: 22%;
+	z-index: 1;
 }
 .banner-text h1 {
 	color: #fff;
@@ -393,6 +416,21 @@ ul li {
 /* ------------------------------------------------------------------------------
 	 Serives
 -------------------------------------------------------------------------------*/
+
+/*.bar1 {
+	position: absolute;
+	bottom: 0px;
+}*/
+
+.service-holder {
+	position: relative;
+	bottom: -566px;
+	width: 100vw;
+	height: 566px;
+	background-color: #fff;
+	z-index: 99;
+}
+
 .service-section {
 	padding-top: 100px;
 }
@@ -411,23 +449,27 @@ ul li {
 }
 
 #services-banner {
-	background-image: url(../images/banner.jpg);
+	background-image: none;
 	background-position: center top;
 	background-repeat: no-repeat;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	-webkit-background-size: cover;
-	background-size: cover;
+	background-size: 100vw 100vh;
 	min-height: 100vh;
-	z-index: 1;
+	min-width: 100vw;
+	position: fixed;
+	top: 0px;
+	z-index: -2;
 }
 
 #services-banner .fixed{
 	background-color: red;
 	background-image: none;
 	position: fixed;
-	top: 0;
+	bottom: 0;
 }
+
 /*.services-banner-text {
 	padding-top: 22%;
 }
@@ -449,12 +491,17 @@ ul li {
 /* ------------------------------------------------------------------------------
 	 Works
 -------------------------------------------------------------------------------*/
+.works {
+	z-index: 98;
+}
+
 .work {
 	-moz-box-shadow: 0 0 0 1px #fff;
 	-webkit-box-shadow: 0 0 0 1px #fff;
 	box-shadow: 0 0 0 1px #fff;
 	overflow: hidden;
 	position: relative;
+	z-index: 98;
 }
 .work img {
 	width: 100%;
