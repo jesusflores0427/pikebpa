@@ -1,8 +1,14 @@
 $(document).ready(function() {
+	// var scroll = $(window).scrollTop();
 		var banner = document.getElementById('banner');
 		var h = window.innerHeight;
 		banner.style.height = (h)+'px';
-		console.log(h);
+
+// =====================ensures that the page loads the correct stuff for its scroll value===================
+		$(document).ready(function(){
+		    $(this).scrollTop(0);
+		});
+		// console.log(h);
 
 
 	// Header Scroll
@@ -15,6 +21,12 @@ $(document).ready(function() {
 		var header = document.getElementById('header');
 		var banner = document.getElementById('banner');
 		var bannerCont = document.getElementById('banner-cont');
+		var teams = document.getElementById('teams');
+		var contact = document.getElementById('contact');
+		contact.style.backgroundColor = '#D3D3D3';
+		teams.style.backgroundColor = '#fff';
+		teams.style.marginBottom = 100+'vh';
+		var banner2 = document.getElementById('services-banner');
 		// bannerCont.style.zIndex = 8;
 		var h = window.innerHeight;
 		header.style.zIndex = 99;
@@ -23,7 +35,12 @@ $(document).ready(function() {
 
 		if (scroll >= 790) {
 			bannerCont.style.position = "absolute";
-			bannerCont.style.top = '-'+10000+'px';
+			bannerCont.style.top = 10000+'px';
+			// console.log(bannerCont.style.top);
+		} else {
+			bannerCont.style.position = "absolute";
+			bannerCont.style.top = 0+'px';
+			bannerCont.style.left = 375+'px';
 		}
 
 		if (scroll <= 1022) {
@@ -32,8 +49,6 @@ $(document).ready(function() {
 			$('#header').addClass('test');
 			header.style.position = "fixed";
 			header.style.bottom = scroll+'px';
-			bannerCont.style.top = 0+'px';
-			bannerCont.style.left = 140+'px';
 			// banner.style.zIndex = '-'+1;
 			// banner.style.position = "fixed";
 			// banner.style.top = 0+'px';
@@ -46,19 +61,24 @@ $(document).ready(function() {
 			$('#header').addClass('fixed');
 			banner.style.zIndex = '-'+4;
 			header.style.zIndex = 99;
-		} 
+		}  
 
 		// while (scroll < 500) {
 		// 	$('#header').style.position = scroll;
 		// }
+		if (scroll > 1062 && scroll < 2217) {
+			banner.style.height = 0+'px';
+			// console.log(banner2.style.height);
+		}
 
 // ========================services=========================
 
-		var banner2 = document.getElementById('services-banner');
+		var banner3 = document.getElementById('works-banner');
+		banner2.style.height = (100)+'vh';
 // 		var services = document.getElementById('services');
 		if (scroll >= 200) {
 			$('services-banner').addClass('fixed');
-
+			banner2.style.zIndex = '-'+6;
 // // =========================opacity============================
 
 // 			// services.style.position = "fixed";
@@ -74,12 +94,24 @@ $(document).ready(function() {
 
 			// banner2.style.position = "fixed";
 			// banner2.style.bottom = 0+'px';
-			banner2.style.height = (scroll - 540)+'px';
+			// banner2.style.height = (scroll - 540)+'px';
 			// console.log(services.style.height);
 			// banner2.style.width = 100+'vw';
 			banner2.style.backgroundImage = 'url(../bpasite/images/workHard.jpg)';
-			console.log("hello");
-		} 
+			// console.log("hello");
+		} if (scroll > 1490) {
+			$('works-banner').addClass('fixed');
+			banner3.style.backgroundImage = 'url(../bpasite/images/pinkmoon.jpg)';
+			banner3.style.height = 100+'vh';
+			banner3.style.zIndex = '-'+7;
+			banner.style.zIndex = '-'+8;
+			banner2.style.height = (h - (scroll - 1490))+'px';
+			// console.log(banner2.style.height);
+		}  if  (scroll > 2507) {
+			banner2.style.zIndex = '-'+10;
+			banner3.style.height = 100+'vh';
+			banner3.style.zIndex = '-'+1;
+		}
 		// if (scroll >= 2100) {
 		// 	services.style.backgroundImage = 'url(../bpasite/images/banner.jpg)';
 		// }
