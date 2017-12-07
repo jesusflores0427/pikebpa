@@ -77,6 +77,8 @@ body {
 	font-family: "Open Sans", Arial, sans-serif;
 	font-weight: 400;
 	color: #6c7279;
+	position: absolute;
+	top: 100vh;
 }
 ul, ol {
 	margin: 0;
@@ -103,18 +105,34 @@ ul li {
 -------------------------------------------------------------------------------*/
 #header {
 	position: fixed;
+	bottom: 0px;
+	height: 80px;
+	background-color: #00aeda;
 	width: 100%;
-	z-index: 999;
+	z-index: 99;
 }
+
+#header a {
+	color:#fff;
+
+}
+
+#header a:hover {
+	color:black;
+
+}
+
 #header .header-content {
 	margin: 0 auto;
 	max-width: 1170px;
 	padding: 60px 0;
 	width: 100%;
-	-moz-transition: padding 0.3s;
+	z-index: 999;
+/*	-moz-transition: padding 0.3s;
 	-o-transition: padding 0.3s;
 	-webkit-transition: padding 0.3s;
-	transition: padding 0.3s;
+	transition: padding 0.3s;*/
+	padding: 25px 0;
 }
 #header .logo {
 	float: left;
@@ -125,11 +143,40 @@ ul li {
 	text-transform:uppercase;
 	letter-spacing:7px;
 }
+#header.test {
+	position: fixed;
+	bottom: 100px;
+	background-color: #00aeda;
+}
+#header.test a {
+	color: #fff;
+}
+#header.test a:hover {
+	color:black;
+
+}
+#header.test .header-content {
+	border-bottom: 0;
+	padding: 25px 0;
+}
+#header.test .nav-toggle {
+	top: 18px;
+	color: #000;
+}
 #header.fixed {
-	background-color: #fff;
+	z-index: 99;
+	position: fixed;
+	/*bottom: 0;*/
+	top: 0;
+	background-color: #00aeda;
+	height: 80px;
 }
 #header.fixed a {
-	color: #000;
+	color: #fff;
+}
+#header.fixed a:hover {
+	color:black;
+
 }
 #header.fixed .header-content {
 	border-bottom: 0;
@@ -302,19 +349,39 @@ ul li {
 /* ------------------------------------------------------------------------------
 	Banner
 -------------------------------------------------------------------------------*/
-
-.banner {
+.banner-cont {
+	position: absolute;
+}
+.banner-stupidshit {
 	background-image: url(../images/banner.jpg);
 	background-position: center top;
 	background-repeat: no-repeat;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	-webkit-background-size: cover;
-	background-size: cover;
-	min-height: 750px;
+	background-size: 100vw 100vh;
+	min-height: 0px;
+	min-width: 100vw !important;
+	z-index: -1;
+	position: fixed;
+}
+#banner {
+	background-image: url(../images/banner.jpg);
+	background-position:center top;
+	background-repeat: no-repeat;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-webkit-background-size: cover;
+	background-size:  100vw 100vh;
+	min-height: 0px;
+	min-width: 100vw;
+	z-index: -1;
+	position: fixed;
+	top: 0px;
 }
 .banner-text {
 	padding-top: 22%;
+	z-index: 1;
 }
 .banner-text h1 {
 	color: #fff;
@@ -349,11 +416,30 @@ ul li {
 /* ------------------------------------------------------------------------------
 	 Serives
 -------------------------------------------------------------------------------*/
+
+/*.bar1 {
+	position: absolute;
+	bottom: 0px;
+}*/
+
+.service-holder {
+	position: relative;
+	bottom: 0px;
+	width: 100vw;
+	height: 566px;
+	background-color: #fff;
+	z-index: 99;
+	padding-top: 110px;
+	margin-top: 0px;
+	margin-bottom: 90vh
+}
+
 .service-section {
 	padding-top: 100px;
 }
 .services {
 	margin-bottom: 50px;
+	z-index: 99;
 }
 .services-content {
 	padding: 0 15px;
@@ -364,15 +450,83 @@ ul li {
 	font-size: 50px;
 	padding-left: 15px;
 }
+
+#services-banner {
+	background-image: none;
+	background-position: center top;
+	background-repeat: no-repeat;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: 100vw 100vh;
+	min-height: 0px;
+	min-width: 100vw;
+	position: fixed;
+	top: 0px;
+	z-index: -2;
+}
+
+#services-banner .fixed{
+	background-color: red;
+	background-image: none;
+	position: fixed;
+	bottom: 0;
+}
+
+#works-banner {
+	background-image: none;
+	background-position: center top;
+	background-repeat: no-repeat;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: 100vw 100vh;
+	min-height: 0px;
+	min-width: 100vw;
+	position: fixed;
+	top: 0px;
+	z-index: -3;
+}
+
+#works-banner .fixed{
+	background-color: red;
+	background-image: none;
+	position: fixed;
+	bottom: 0;
+}
+
+/*.services-banner-text {
+	padding-top: 22%;
+}
+.services-banner-text h1 {
+	color: #fff;
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 65px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.services-banner-text p {
+	color: rgba(255, 255, 255, 0.60);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	margin-top: 30px;
+	margin-bottom: 80px;
+}*/
 /* ------------------------------------------------------------------------------
 	 Works
 -------------------------------------------------------------------------------*/
+.works {
+	z-index: 98;
+}
+
 .work {
 	-moz-box-shadow: 0 0 0 1px #fff;
 	-webkit-box-shadow: 0 0 0 1px #fff;
 	box-shadow: 0 0 0 1px #fff;
 	overflow: hidden;
 	position: relative;
+	z-index: 98;
 }
 .work img {
 	width: 100%;
@@ -654,3 +808,38 @@ padding:15px 30px 15px 30px;
 	font-size: 11px;
 	margin: 0 2px;
 }
+
+
+
+
+/*===========================testimonials page==============================*/
+
+
+.box-one {
+	width: 100vw;
+	height: 100vh;
+	background-color: white;
+}
+
+.c1 {
+	width: 100vw;
+	height: 100px;
+	background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
